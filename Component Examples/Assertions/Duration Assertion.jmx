@@ -216,6 +216,12 @@
           </kg.apc.jmeter.samplers.DummySampler>
           <hashTree/>
         </hashTree>
+        <CompareAssertion guiclass="TestBeanGUI" testclass="CompareAssertion" testname="Compare Assertion" enabled="true">
+          <boolProp name="compareContent">true</boolProp>
+          <longProp name="compareTime">-1</longProp>
+          <collectionProp name="stringsToSkip"/>
+        </CompareAssertion>
+        <hashTree/>
       </hashTree>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
