@@ -28,19 +28,11 @@
       <hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Per Controller" enabled="true"/>
         <hashTree>
-          <CompareAssertion guiclass="TestBeanGUI" testclass="CompareAssertion" testname="Compare Assertion - Content" enabled="true">
-            <boolProp name="compareContent">true</boolProp>
-            <longProp name="compareTime">-1</longProp>
-            <collectionProp name="stringsToSkip"/>
-          </CompareAssertion>
+          <MD5HexAssertion guiclass="MD5HexAssertionGUI" testclass="MD5HexAssertion" testname="MD5Hex Assertion" enabled="true">
+            <stringProp name="MD5HexAssertion.size">bdb6bd1ec794edfc4fe914ca309281da</stringProp>
+          </MD5HexAssertion>
           <hashTree/>
-          <CompareAssertion guiclass="TestBeanGUI" testclass="CompareAssertion" testname="Compare Assertion - Content and Time" enabled="true">
-            <boolProp name="compareContent">true</boolProp>
-            <longProp name="compareTime">0</longProp>
-            <collectionProp name="stringsToSkip"/>
-          </CompareAssertion>
-          <hashTree/>
-          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 1 - Content to compare" enabled="true">
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 1 - MD5 = bdb6bd1ec794edfc4fe914ca309281da" enabled="true">
             <boolProp name="WAITING">true</boolProp>
             <boolProp name="SUCCESFULL">true</boolProp>
             <stringProp name="RESPONSE_CODE">200</stringProp>
@@ -72,7 +64,7 @@
             <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
           </kg.apc.jmeter.samplers.DummySampler>
           <hashTree/>
-          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 2 - Same content and response time as Sampler #1" enabled="true">
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 2 - MD5 = 8f8917acbd2c79e2fad2be5105d28134" enabled="true">
             <boolProp name="WAITING">true</boolProp>
             <boolProp name="SUCCESFULL">true</boolProp>
             <stringProp name="RESPONSE_CODE">200</stringProp>
@@ -81,7 +73,7 @@
             <stringProp name="RESPONSE_DATA">{
    &quot;events&quot;: [{
       &quot;contentId&quot;: 330397,
-      &quot;recurringCampaignId&quot;: 12345,
+      &quot;recurringCampaignId&quot;: 1234,
       &quot;email&quot;: &quot;antonio@flood.io&quot;,
       &quot;createdAt&quot;: &quot;2016-10-04 00:54:00 +00:00&quot;,
       &quot;campaignId&quot;: 67890,
@@ -100,70 +92,6 @@
 }]
 }</stringProp>
             <stringProp name="RESPONSE_TIME">10</stringProp>
-            <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
-            <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
-          </kg.apc.jmeter.samplers.DummySampler>
-          <hashTree/>
-          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 3 - Different content but same response time as Sampler #1 - This fails" enabled="true">
-            <boolProp name="WAITING">true</boolProp>
-            <boolProp name="SUCCESFULL">true</boolProp>
-            <stringProp name="RESPONSE_CODE">200</stringProp>
-            <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
-            <stringProp name="REQUEST_DATA">GET https://www.example.com/somepath</stringProp>
-            <stringProp name="RESPONSE_DATA">{
-   &quot;events&quot;: [{
-      &quot;contentId&quot;: 330397,
-      &quot;recurringCampaignId&quot;: 11,
-      &quot;email&quot;: &quot;antonio@flood.io&quot;,
-      &quot;createdAt&quot;: &quot;2016-10-04 00:54:00 +00:00&quot;,
-      &quot;campaignId&quot;: 67890,
-      &quot;templateId&quot;: 11111,
-      &quot;messageId&quot;: &quot;1234example9876&quot;,
-      &quot;eventType&quot;: &quot;emailSend&quot;
-}, {
-      &quot;contentId&quot;: 329261,
-      &quot;recurringCampaignId&quot;: 12345,
-      &quot;email&quot;: &quot;antonio@flood.io&quot;,
-      &quot;createdAt&quot;: &quot;2016-09-30 19:50:00 +00:00&quot;,
-      &quot;campaignId&quot;:67890,
-      &quot;templateId&quot;: 22222,
-      &quot;messageId&quot;: &quot;9876example1234&quot;,
-      &quot;eventType&quot;: &quot;emailSend&quot;
-}]
-}</stringProp>
-            <stringProp name="RESPONSE_TIME">${__Random(50,100)}</stringProp>
-            <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
-            <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
-          </kg.apc.jmeter.samplers.DummySampler>
-          <hashTree/>
-          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 4 - Same content but different repsonse time as Sampler #1 - This fails" enabled="true">
-            <boolProp name="WAITING">true</boolProp>
-            <boolProp name="SUCCESFULL">true</boolProp>
-            <stringProp name="RESPONSE_CODE">200</stringProp>
-            <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
-            <stringProp name="REQUEST_DATA">GET https://www.example.com/somepath</stringProp>
-            <stringProp name="RESPONSE_DATA">{
-   &quot;events&quot;: [{
-      &quot;contentId&quot;: 330397,
-      &quot;recurringCampaignId&quot;: 12345,
-      &quot;email&quot;: &quot;antonio@flood.io&quot;,
-      &quot;createdAt&quot;: &quot;2016-10-04 00:54:00 +00:00&quot;,
-      &quot;campaignId&quot;: 67890,
-      &quot;templateId&quot;: 11111,
-      &quot;messageId&quot;: &quot;1234example9876&quot;,
-      &quot;eventType&quot;: &quot;emailSend&quot;
-}, {
-      &quot;contentId&quot;: 329261,
-      &quot;recurringCampaignId&quot;: 12345,
-      &quot;email&quot;: &quot;antonio@flood.io&quot;,
-      &quot;createdAt&quot;: &quot;2016-09-30 19:50:00 +00:00&quot;,
-      &quot;campaignId&quot;:67890,
-      &quot;templateId&quot;: 22222,
-      &quot;messageId&quot;: &quot;9876example1234&quot;,
-      &quot;eventType&quot;: &quot;emailSend&quot;
-}]
-}</stringProp>
-            <stringProp name="RESPONSE_TIME">${__Random(150,200)}</stringProp>
             <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
             <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
           </kg.apc.jmeter.samplers.DummySampler>
