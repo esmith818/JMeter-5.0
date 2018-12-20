@@ -28,7 +28,7 @@
       <hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Per Request" enabled="true"/>
         <hashTree>
-          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 1 - MD5 = bdb6bd1ec794edfc4fe914ca309281da" enabled="true">
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 1" enabled="true">
             <boolProp name="WAITING">true</boolProp>
             <boolProp name="SUCCESFULL">true</boolProp>
             <stringProp name="RESPONSE_CODE">200</stringProp>
@@ -60,19 +60,92 @@
             <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
           </kg.apc.jmeter.samplers.DummySampler>
           <hashTree>
-            <MD5HexAssertion guiclass="MD5HexAssertionGUI" testclass="MD5HexAssertion" testname="MD5Hex Assertion" enabled="true">
-              <stringProp name="MD5HexAssertion.size">bdb6bd1ec794edfc4fe914ca309281da</stringProp>
-            </MD5HexAssertion>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion - If isSuccessful == true - Print it in logs" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">if (prev.isSuccessful() == true) {
+  log.info(&quot;----------------------------------------------------&quot;)
+  log.info(&quot;The Sample Label is : &quot; + prev.getSampleLabel())
+  log.info(&quot;The Start Time in miliseconds is : &quot; + prev.getStartTime())
+  log.info(&quot;The Response Code is : &quot; + prev.getResponseCode() )
+  log.info(&quot;The Response Message is : &quot; + prev.getResponseMessage())
+  log.info(&quot;Headers are: &quot; + prev.getResponseHeaders())
+  log.info(&quot;----------------------------------------------------&quot;)
+ }</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 2" enabled="true">
+            <boolProp name="WAITING">true</boolProp>
+            <boolProp name="SUCCESFULL">false</boolProp>
+            <stringProp name="RESPONSE_CODE">400</stringProp>
+            <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+            <stringProp name="REQUEST_DATA">GET https://www.example.com/somepath</stringProp>
+            <stringProp name="RESPONSE_DATA">{
+   &quot;events&quot;: [{
+      &quot;contentId&quot;: 330397,
+      &quot;recurringCampaignId&quot;: 12345,
+      &quot;email&quot;: &quot;antonio@flood.io&quot;,
+      &quot;createdAt&quot;: &quot;2016-10-04 00:54:00 +00:00&quot;,
+      &quot;campaignId&quot;: 67890,
+      &quot;templateId&quot;: 11111,
+      &quot;messageId&quot;: &quot;1234example9876&quot;,
+      &quot;eventType&quot;: &quot;emailSend&quot;
+}, {
+      &quot;contentId&quot;: 329261,
+      &quot;recurringCampaignId&quot;: 12345,
+      &quot;email&quot;: &quot;antonio@flood.io&quot;,
+      &quot;createdAt&quot;: &quot;2016-09-30 19:50:00 +00:00&quot;,
+      &quot;campaignId&quot;:67890,
+      &quot;templateId&quot;: 22222,
+      &quot;messageId&quot;: &quot;9876example1234&quot;,
+      &quot;eventType&quot;: &quot;emailSend&quot;
+}]
+}</stringProp>
+            <stringProp name="RESPONSE_TIME">10</stringProp>
+            <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+            <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+          </kg.apc.jmeter.samplers.DummySampler>
+          <hashTree>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion - If isSuccessful == false - Print it in logs" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">if (prev.isSuccessful() == false) {
+  log.info(&quot;----------------------------------------------------&quot;)
+  log.info(&quot;The Sample Label is : &quot; + prev.getSampleLabel())
+  log.info(&quot;The Start Time in miliseconds is : &quot; + prev.getStartTime())
+  log.info(&quot;The Response Code is : &quot; + prev.getResponseCode() )
+  log.info(&quot;The Response Message is : &quot; + prev.getResponseMessage())
+  log.info(&quot;Headers are: &quot; + prev.getResponseHeaders())
+  log.info(&quot;----------------------------------------------------&quot;)
+}</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223Assertion>
             <hashTree/>
           </hashTree>
         </hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Per Controller" enabled="true"/>
         <hashTree>
-          <MD5HexAssertion guiclass="MD5HexAssertionGUI" testclass="MD5HexAssertion" testname="MD5Hex Assertion" enabled="true">
-            <stringProp name="MD5HexAssertion.size">bdb6bd1ec794edfc4fe914ca309281da</stringProp>
-          </MD5HexAssertion>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname=" JSR223 Assertion - If Response code  != 200 - Print it in logs" enabled="true">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">if (prev.getResponseCode() != &apos;200&apos;) {
+  log.info(&quot;----------------------------------------------------&quot;)
+  log.info(&quot;The Sample Label is : &quot; + prev.getSampleLabel())
+  log.info(&quot;The Start Time in miliseconds is : &quot; + prev.getStartTime())
+  log.info(&quot;The Response Code is : &quot; + prev.getResponseCode() )
+  log.info(&quot;The Response Message is : &quot; + prev.getResponseMessage())
+  log.info(&quot;Headers are: &quot; + prev.getResponseHeaders())
+  log.info(&quot;----------------------------------------------------&quot;)
+}</stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223Assertion>
           <hashTree/>
-          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 1 - MD5 = bdb6bd1ec794edfc4fe914ca309281da" enabled="true">
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 3 - HTTP Code 200" enabled="true">
             <boolProp name="WAITING">true</boolProp>
             <boolProp name="SUCCESFULL">true</boolProp>
             <stringProp name="RESPONSE_CODE">200</stringProp>
@@ -104,7 +177,7 @@
             <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
           </kg.apc.jmeter.samplers.DummySampler>
           <hashTree/>
-          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 2 - MD5 = 8f8917acbd2c79e2fad2be5105d28134" enabled="true">
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 4 - HTTP Code 200" enabled="true">
             <boolProp name="WAITING">true</boolProp>
             <boolProp name="SUCCESFULL">true</boolProp>
             <stringProp name="RESPONSE_CODE">200</stringProp>
@@ -113,7 +186,39 @@
             <stringProp name="RESPONSE_DATA">{
    &quot;events&quot;: [{
       &quot;contentId&quot;: 330397,
-      &quot;recurringCampaignId&quot;: 1234,
+      &quot;recurringCampaignId&quot;: 12345,
+      &quot;email&quot;: &quot;antonio@flood.io&quot;,
+      &quot;createdAt&quot;: &quot;2016-10-04 00:54:00 +00:00&quot;,
+      &quot;campaignId&quot;: 67890,
+      &quot;templateId&quot;: 11111,
+      &quot;messageId&quot;: &quot;1234example9876&quot;,
+      &quot;eventType&quot;: &quot;emailSend&quot;
+}, {
+      &quot;contentId&quot;: 329261,
+      &quot;recurringCampaignId&quot;: 12345,
+      &quot;email&quot;: &quot;antonio@flood.io&quot;,
+      &quot;createdAt&quot;: &quot;2016-09-30 19:50:00 +00:00&quot;,
+      &quot;campaignId&quot;:67890,
+      &quot;templateId&quot;: 22222,
+      &quot;messageId&quot;: &quot;9876example1234&quot;,
+      &quot;eventType&quot;: &quot;emailSend&quot;
+}]
+}</stringProp>
+            <stringProp name="RESPONSE_TIME">10</stringProp>
+            <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+            <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+          </kg.apc.jmeter.samplers.DummySampler>
+          <hashTree/>
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 5 - HTTP Code 400" enabled="true">
+            <boolProp name="WAITING">true</boolProp>
+            <boolProp name="SUCCESFULL">false</boolProp>
+            <stringProp name="RESPONSE_CODE">400</stringProp>
+            <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+            <stringProp name="REQUEST_DATA">GET https://www.example.com/somepath</stringProp>
+            <stringProp name="RESPONSE_DATA">{
+   &quot;events&quot;: [{
+      &quot;contentId&quot;: 330397,
+      &quot;recurringCampaignId&quot;: 12345,
       &quot;email&quot;: &quot;antonio@flood.io&quot;,
       &quot;createdAt&quot;: &quot;2016-10-04 00:54:00 +00:00&quot;,
       &quot;campaignId&quot;: 67890,
