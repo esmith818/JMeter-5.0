@@ -70,7 +70,7 @@
         </hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Per Controller" enabled="true"/>
         <hashTree>
-          <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion - This Assertion affects to all the requests in the Controller - full response greater than 1 byte" enabled="true">
+          <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion - This Assertion affects to all the requests in the Controller" enabled="true">
             <stringProp name="Assertion.test_field">SizeAssertion.response_network_size</stringProp>
             <stringProp name="SizeAssertion.size">1</stringProp>
             <intProp name="SizeAssertion.operator">3</intProp>
