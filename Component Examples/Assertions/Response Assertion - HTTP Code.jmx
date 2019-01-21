@@ -28,7 +28,7 @@
       <hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="HTTP Code - Per Request" enabled="true"/>
         <hashTree>
-          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler with HTTP Code 200" enabled="true">
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 1 - Pass - HTTP Code 200" enabled="true">
             <boolProp name="WAITING">true</boolProp>
             <boolProp name="SUCCESFULL">true</boolProp>
             <stringProp name="RESPONSE_CODE">200</stringProp>
@@ -64,7 +64,7 @@
             <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler with HTTP Code 200" enabled="true">
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 2 - Pass - HTTP Code 200" enabled="true">
             <boolProp name="WAITING">true</boolProp>
             <boolProp name="SUCCESFULL">true</boolProp>
             <stringProp name="RESPONSE_CODE">200</stringProp>
@@ -76,7 +76,7 @@
             <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
           </kg.apc.jmeter.samplers.DummySampler>
           <hashTree/>
-          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler with HTTP Code 201" enabled="true">
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 3 - Pass - HTTP Code 201" enabled="true">
             <boolProp name="WAITING">true</boolProp>
             <boolProp name="SUCCESFULL">true</boolProp>
             <stringProp name="RESPONSE_CODE">201</stringProp>
@@ -88,7 +88,7 @@
             <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
           </kg.apc.jmeter.samplers.DummySampler>
           <hashTree/>
-          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler with HTTP Code 203" enabled="true">
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 4 - Pass - HTTP Code 203" enabled="true">
             <boolProp name="WAITING">true</boolProp>
             <boolProp name="SUCCESFULL">true</boolProp>
             <stringProp name="RESPONSE_CODE">203</stringProp>
@@ -100,7 +100,7 @@
             <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
           </kg.apc.jmeter.samplers.DummySampler>
           <hashTree/>
-          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler with HTTP Code 204" enabled="true">
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 5 - Pass - HTTP Code 204" enabled="true">
             <boolProp name="WAITING">true</boolProp>
             <boolProp name="SUCCESFULL">true</boolProp>
             <stringProp name="RESPONSE_CODE">200</stringProp>
@@ -125,7 +125,7 @@
             <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler with HTTP Code 200" enabled="true">
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 6 - Pass - HTTP Code 200" enabled="true">
             <boolProp name="WAITING">true</boolProp>
             <boolProp name="SUCCESFULL">true</boolProp>
             <stringProp name="RESPONSE_CODE">200</stringProp>
@@ -137,7 +137,7 @@
             <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
           </kg.apc.jmeter.samplers.DummySampler>
           <hashTree/>
-          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler with HTTP Code 400" enabled="true">
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 7 - Fail - HTTP Code 400" enabled="true">
             <boolProp name="WAITING">true</boolProp>
             <boolProp name="SUCCESFULL">true</boolProp>
             <stringProp name="RESPONSE_CODE">400</stringProp>
@@ -149,7 +149,7 @@
             <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
           </kg.apc.jmeter.samplers.DummySampler>
           <hashTree/>
-          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler with HTTP Code 404" enabled="true">
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 8 - Fail - HTTP Code 404" enabled="true">
             <boolProp name="WAITING">true</boolProp>
             <boolProp name="SUCCESFULL">true</boolProp>
             <stringProp name="RESPONSE_CODE">404</stringProp>
@@ -161,7 +161,7 @@
             <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
           </kg.apc.jmeter.samplers.DummySampler>
           <hashTree/>
-          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler with HTTP Code 503" enabled="true">
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 9 - Fail - HTTP Code 503" enabled="true">
             <boolProp name="WAITING">true</boolProp>
             <boolProp name="SUCCESFULL">true</boolProp>
             <stringProp name="RESPONSE_CODE">503</stringProp>
@@ -185,7 +185,7 @@
             <stringProp name="Assertion.scope">all</stringProp>
           </ResponseAssertion>
           <hashTree/>
-          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler with HTTP Code 200" enabled="true">
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 10 - Should Pass - HTTP Code 200 - But ignored status" enabled="true">
             <boolProp name="WAITING">true</boolProp>
             <boolProp name="SUCCESFULL">true</boolProp>
             <stringProp name="RESPONSE_CODE">200</stringProp>
@@ -197,7 +197,7 @@
             <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
           </kg.apc.jmeter.samplers.DummySampler>
           <hashTree/>
-          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler with HTTP Code 400" enabled="true">
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 11 - Should Fail - HTTP Code 400 - But ignored status" enabled="true">
             <boolProp name="WAITING">true</boolProp>
             <boolProp name="SUCCESFULL">true</boolProp>
             <stringProp name="RESPONSE_CODE">400</stringProp>
@@ -209,7 +209,7 @@
             <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
           </kg.apc.jmeter.samplers.DummySampler>
           <hashTree/>
-          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler with HTTP Code 404" enabled="true">
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 12 - Should Fail - HTTP Code 404 - But ignored status" enabled="true">
             <boolProp name="WAITING">true</boolProp>
             <boolProp name="SUCCESFULL">true</boolProp>
             <stringProp name="RESPONSE_CODE">404</stringProp>
@@ -221,7 +221,7 @@
             <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
           </kg.apc.jmeter.samplers.DummySampler>
           <hashTree/>
-          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler with HTTP Code 503" enabled="true">
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Dummy Sampler 13 - Should Fail - HTTP Code 503 - But ignored status" enabled="true">
             <boolProp name="WAITING">true</boolProp>
             <boolProp name="SUCCESFULL">true</boolProp>
             <stringProp name="RESPONSE_CODE">503</stringProp>
